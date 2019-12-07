@@ -74,6 +74,16 @@ def the_Biggest_Devisor(n):  # действуем, как в функции на
 
 # 4) функция выводит каноническое разложение числа
 def prime_Multipliers_Canonical(n):
+    if type(n) == str:
+        if n.isdigit():
+            n = int(n)
+        else:
+            return 'Функция принимает на вход числа'
+    if type(n) == float:
+        return 'Функция принимает на вход целые числа'
+
+    if n <= 1000 and is_Number_Prime(n): # если число на входе простое до 1000
+        return 'Вы ввели простое число'
     if type(n) == int and n>0:
         prime_mult = [] # пустой список простых множителей
         for a in range(1,n): # от 1 до n (не включая n):
